@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1200px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Explicit high-contrast typography and backgrounds in dark mode */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #ffffff !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #ffffff !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .bg-white {
+  background-color: #0c1424 !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #1e293b !important;
+}
+
+/* Custom 3D Cube & Glow styles */
+.cube-viewport {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+.cube-container {
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 35px -5px rgba(249, 115, 22, 0.45);
+}
+
+.glow-orange-lg {
+  box-shadow: 0 0 60px -10px rgba(249, 115, 22, 0.6);
+}
+
+.glow-green {
+  box-shadow: 0 0 30px -5px rgba(34, 197, 94, 0.5);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s infinite ease-in-out;
+}
+
+

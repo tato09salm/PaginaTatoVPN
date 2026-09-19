@@ -1,0 +1,6 @@
+{
+  "name": "TatoVPN",
+  "description": "Página oficial de presentación y descarga directa de TatoVPN, cliente VPN SSH/SSL con modo servidor y escritorio remoto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
