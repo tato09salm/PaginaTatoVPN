@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Download, ExternalLink, ShieldCheck, Mail, Heart } from 'lucide-react';
 import { TatoLogo } from './TatoLogo';
 
 interface FooterProps {
@@ -7,7 +7,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
-  const driveUrl = 'https://drive.google.com/file/d/13rq-wzHFiXNQuPqqcnL1JbuagGCqBl2z/view?usp=drive_link';
+  const driveUrl = 'https://drive.google.com/file/d/1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw/view';
 
   return (
     <footer className="bg-[#05080f] text-slate-400 border-t border-slate-800/80 pt-12 pb-10">
@@ -39,6 +39,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
               Escritorio Remoto
             </a>
             <span className="text-slate-700">•</span>
+            <a href="#faq" className="hover:text-orange-400 transition-colors">
+              Preguntas Frecuentes
+            </a>
+            <span className="text-slate-700">•</span>
             <a
               href={driveUrl}
               target="_blank"
@@ -60,8 +64,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
           </button>
         </div>
 
+        {/* Contact info bar */}
+        <div className="py-6 border-b border-slate-800/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-slate-400 text-center sm:text-left">
+            <div className="flex items-center gap-1.5">
+              <Mail className="w-4 h-4 text-orange-400" />
+              <span>Contáctanos mediante:</span>
+              <a
+                href="mailto:thutato09.2003@gmail.com"
+                className="text-orange-400 hover:text-orange-300 font-semibold underline underline-offset-2"
+              >
+                thutato09.2003@gmail.com
+              </a>
+            </div>
+            <span className="text-slate-600 hidden md:inline">•</span>
+            <span className="text-slate-400 italic">para contratos y maltratos.</span>
+          </div>
+
+          <div className="flex items-center gap-1.5 text-orange-400 font-medium">
+            <span>gracias por apoyar TatoVPN</span>
+            <Heart className="w-3.5 h-3.5 fill-orange-500 text-orange-500" />
+          </div>
+        </div>
+
         {/* Bottom copyright */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
             © {new Date().getFullYear()} TatoVPN. Todos los derechos reservados. Conecta • Protege • Navega Libre.
           </div>

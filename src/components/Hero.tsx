@@ -17,7 +17,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
-  const directDriveUrl = 'https://drive.usercontent.google.com/download?id=13rq-wzHFiXNQuPqqcnL1JbuagGCqBl2z&export=download';
+  const directDriveUrl = 'https://drive.usercontent.google.com/download?id=1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw&export=download';
 
   return (
     <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden">

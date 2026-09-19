@@ -18,5 +18,5 @@ export interface FeatureItem {
 
 export interface FaqItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }

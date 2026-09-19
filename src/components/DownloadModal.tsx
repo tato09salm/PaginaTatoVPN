@@ -22,10 +22,10 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
   const [downloadTriggered, setDownloadTriggered] = useState(false);
 
   // Direct download links
-  const fileId = '13rq-wzHFiXNQuPqqcnL1JbuagGCqBl2z';
+  const fileId = '1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw';
   const directDownloadUrl = `https://drive.usercontent.google.com/download?id=${fileId}&export=download`;
   const directUcUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-  const driveViewUrl = `https://drive.google.com/file/d/${fileId}/view?usp=drive_link`;
+  const driveViewUrl = `https://drive.google.com/file/d/${fileId}/view`;
 
   // Trigger download automatically when modal opens
   useEffect(() => {
@@ -155,31 +155,31 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
           <div className="bg-slate-50 dark:bg-slate-900/60 rounded-xl p-4 border border-slate-200 dark:border-slate-800 mb-4">
             <h4 className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
               <FileCheck className="w-4 h-4 text-orange-500" />
-              <span>Instalación rápida en 3 pasos:</span>
+              <span>Pasos para instalar TatoVPN:</span>
             </h4>
-            <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-              <li className="flex items-start gap-2">
-                <span className="w-4 h-4 rounded-full bg-orange-500 text-white font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">
+            <ol className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
+              <li className="flex items-start gap-2.5">
+                <span className="w-5 h-5 rounded-full bg-orange-500 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   1
                 </span>
                 <span>
-                  Guarda el archivo descargado desde Google Drive en tu computadora.
+                  <strong className="text-slate-900 dark:text-white">Descargar el .exe:</strong> Haz clic en el botón de descarga para bajar el ejecutable oficial desde Google Drive.
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-4 h-4 rounded-full bg-orange-500 text-white font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex items-start gap-2.5">
+                <span className="w-5 h-5 rounded-full bg-orange-500 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   2
                 </span>
                 <span>
-                  Ejecuta <strong>TatoVPN</strong>. Si Windows SmartScreen lo solicita, pulsa <em>"Más información"</em> → <em>"Ejecutar de todas formas"</em>.
+                  <strong className="text-slate-900 dark:text-white">Instalar:</strong> De preferencia crea una carpeta para el contenido de la aplicación y mueve allí el archivo ejecutable.
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-4 h-4 rounded-full bg-orange-500 text-white font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex items-start gap-2.5">
+                <span className="w-5 h-5 rounded-full bg-orange-500 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   3
                 </span>
                 <span>
-                  Ingresa tu cuenta SSH o activa el <strong>Modo Servidor</strong> para controlar tu laptop o compartir internet.
+                  <strong className="text-slate-900 dark:text-white">¡Disfruta de TatoVPN!</strong> Ejecuta la aplicación y disfruta de tu conexión segura o comparte internet.
                 </span>
               </li>
             </ol>
