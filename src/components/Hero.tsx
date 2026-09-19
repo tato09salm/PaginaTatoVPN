@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             <div className="relative bg-black p-5 sm:p-7 rounded-3xl border-2 border-orange-500/50 shadow-2xl shadow-orange-950/60 flex flex-col items-center text-center glow-orange group hover:border-orange-400 transition-all duration-300 w-full max-w-[420px]">
               <div className="w-full aspect-square rounded-2xl overflow-hidden bg-black flex items-center justify-center p-2">
                 <img
-                  src="/images/TatoLogoNegro.png"
+                  src={`${import.meta.env.BASE_URL}images/TatoLogoNegro.png`}
                   alt="TatoVPN Logo Oficial"
                   className="w-full h-full object-contain drop-shadow-[0_10px_25px_rgba(249,115,22,0.3)]"
                 />

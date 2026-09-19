@@ -445,14 +445,14 @@ export const InteractiveCube: React.FC<InteractiveCubeProps> = ({ onOpenDownload
                   style={{ transform: 'rotateX(-90deg) translateZ(210px)' }}
                   onClick={() =>
                     setZoomImage({
-                      src: '/images/TatoLogoNegro.png',
+                      src: `${import.meta.env.BASE_URL}images/TatoLogoNegro.png`,
                       title: 'TatoVPN Logo Oficial',
                       desc: 'Emblema oficial TatoVPN - Conecta • Protege • Navega Libre',
                     })
                   }
                 >
                   <img
-                    src="/images/TatoLogoNegro.png"
+                    src={`${import.meta.env.BASE_URL}images/TatoLogoNegro.png`}
                     alt="TatoLogoNegro"
                     className="w-full h-full object-contain"
                   />
