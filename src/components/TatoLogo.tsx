@@ -23,7 +23,7 @@ export const TatoLogo: React.FC<TatoLogoProps> = ({
       {/* Real TatoLogo image asset from public/images/ */}
       <div className={`relative ${sizeClasses} shrink-0 select-none overflow-hidden rounded-xl`}>
         <img
-          src="/images/TatoLogoNegro.png"
+          src={`${import.meta.env.BASE_URL}images/TatoLogoNegro.png`}
           alt="TatoVPN Logo"
           className="w-full h-full object-contain"
         />
