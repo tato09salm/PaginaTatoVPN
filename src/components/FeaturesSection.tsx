@@ -187,7 +187,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onOpenDownload
               ¿Listo para experimentar la libertad total en tu conexión?
             </h3>
             <p className="mt-2 text-sm sm:text-base text-orange-100 font-medium">
-              Descarga TatoVPN ahora desde Google Drive oficial. Instalación directa sin registros, anuncios molestos ni suscripciones ocultas.
+              Descarga TatoVPN ahora de forma directa. Instalación rápida sin registros, anuncios molestos ni suscripciones ocultas.
             </p>
           </div>
           <button

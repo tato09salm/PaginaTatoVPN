@@ -21,21 +21,19 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
   const [copied, setCopied] = useState(false);
   const [downloadTriggered, setDownloadTriggered] = useState(false);
 
-  // Direct download links
-  const fileId = '1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw';
-  const directDownloadUrl = `https://drive.usercontent.google.com/download?id=${fileId}&export=download`;
-  const directUcUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-  const driveViewUrl = `https://drive.google.com/file/d/${fileId}/view`;
+  // Direct installer download configuration
+  const installerFileName = 'TatoVPN_Installer.exe';
+  const directDownloadUrl = `${import.meta.env.BASE_URL}${installerFileName}`;
+  const driveBackupUrl = 'https://drive.google.com/file/d/1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw/view';
 
   // Trigger download automatically when modal opens
   useEffect(() => {
     if (isOpen) {
       setDownloadTriggered(true);
-      // Initiate download in background
+      // Initiate direct download
       const link = document.createElement('a');
       link.href = directDownloadUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      link.setAttribute('download', installerFileName);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -45,7 +43,8 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
   }, [isOpen, directDownloadUrl]);
 
   const handleCopyLink = () => {
-    navigator.clipboard?.writeText(directDownloadUrl);
+    const fullUrl = new URL(directDownloadUrl, window.location.href).href;
+    navigator.clipboard?.writeText(fullUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -76,7 +75,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                 Descargando <span className="text-orange-500">TatoVPN</span>
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                Versión oficial para Windows (64 bits) • SSH, SOCKS5 & Servidor Remoto
+                Instalador oficial para Windows (64 bits) • TatoVPN_Installer.exe
               </p>
             </div>
           </div>
@@ -101,34 +100,32 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
             {/* Direct Instant Download */}
             <a
               href={directDownloadUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              download={installerFileName}
               className="w-full py-3.5 px-4 bg-orange-600 hover:bg-orange-500 text-white font-black rounded-xl shadow-lg shadow-orange-600/30 flex items-center justify-center gap-2.5 text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               <Download className="w-5 h-5" />
-              <span>Descargar Directamente (Google Drive)</span>
+              <span>Descargar TatoVPN_Installer.exe (Directo)</span>
             </a>
 
             {/* Alternate / Mirror Button */}
             <div className="grid grid-cols-2 gap-2">
               <a
-                href={directUcUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={directDownloadUrl}
+                download={installerFileName}
                 className="py-2 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center gap-1.5 transition-all"
               >
                 <Download className="w-3.5 h-3.5 text-orange-500" />
-                <span>Enlace Directo 2</span>
+                <span>Reintentar descarga</span>
               </a>
 
               <a
-                href={driveViewUrl}
+                href={driveBackupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center gap-1.5 transition-all"
               >
                 <ExternalLink className="w-3.5 h-3.5 text-orange-500" />
-                <span>Ver en Drive</span>
+                <span>Opción Google Drive</span>
               </a>
             </div>
 
@@ -163,7 +160,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                   1
                 </span>
                 <span>
-                  <strong className="text-slate-900 dark:text-white">Descargar el .exe:</strong> Haz clic en el botón de descarga para bajar el ejecutable oficial desde Google Drive.
+                  <strong className="text-slate-900 dark:text-white">Descargar el archivo:</strong> Haz clic en el botón de descarga para bajar directamente el instalador oficial TatoVPN_Installer.exe.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">

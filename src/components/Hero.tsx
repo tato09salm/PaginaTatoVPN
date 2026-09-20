@@ -17,7 +17,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
-  const directDriveUrl = 'https://drive.usercontent.google.com/download?id=1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw&export=download';
+  const installerUrl = `${import.meta.env.BASE_URL}TatoVPN_Installer.exe`;
 
   return (
     <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden">
@@ -85,23 +85,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
               </a>
             </div>
 
-            {/* Direct Google Drive Link Note */}
+            {/* Direct Installer Download Note */}
             <div className="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                Alojado en Google Drive Oficial
+                Instalador Oficial Verificado
               </span>
               <span>•</span>
               <span>Windows 10 / 11 (64-bit)</span>
               <span>•</span>
               <a
-                href={directDriveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={installerUrl}
+                download="TatoVPN_Installer.exe"
                 className="text-orange-600 dark:text-orange-400 font-semibold hover:underline inline-flex items-center gap-1"
               >
-                Descargar enlace directo
-                <ExternalLink className="w-3 h-3" />
+                Descargar TatoVPN_Installer.exe
+                <Download className="w-3 h-3" />
               </a>
             </div>
           </div>

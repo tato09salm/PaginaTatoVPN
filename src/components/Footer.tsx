@@ -7,7 +7,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
-  const driveUrl = 'https://drive.google.com/file/d/1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw/view';
+  const installerUrl = `${import.meta.env.BASE_URL}TatoVPN_Installer.exe`;
 
   return (
     <footer className="bg-[#05080f] text-slate-400 border-t border-slate-800/80 pt-12 pb-10">
@@ -44,13 +44,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
             </a>
             <span className="text-slate-700">•</span>
             <a
-              href={driveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={installerUrl}
+              download="TatoVPN_Installer.exe"
               className="text-orange-400 hover:text-orange-300 flex items-center gap-1 transition-colors"
             >
-              <span>Carpeta Google Drive</span>
-              <ExternalLink className="w-3 h-3" />
+              <span>Descargar .exe</span>
+              <Download className="w-3.5 h-3.5" />
             </a>
           </div>
 
