@@ -11,6 +11,11 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { TatoLogo } from './TatoLogo';
+import {
+  githubInstallerUrl,
+  installerFileName,
+  installerUrl,
+} from '../downloadConfig';
 
 interface DownloadModalProps {
   isOpen: boolean;
@@ -21,10 +26,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
   const [copied, setCopied] = useState(false);
   const [downloadTriggered, setDownloadTriggered] = useState(false);
 
-  // Direct installer download configuration
-  const installerFileName = 'TatoVPN_Installer.exe';
-  const directDownloadUrl = `${import.meta.env.BASE_URL}${installerFileName}`;
-  const driveBackupUrl = 'https://drive.google.com/file/d/1rogQga8ObbFe4rXSR9qDIe-s0p4xRFrw/view';
+  const directDownloadUrl = installerUrl;
 
   // Trigger download automatically when modal opens
   useEffect(() => {
@@ -119,13 +121,13 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
               </a>
 
               <a
-                href={driveBackupUrl}
+                href={githubInstallerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center gap-1.5 transition-all"
               >
                 <ExternalLink className="w-3.5 h-3.5 text-orange-500" />
-                <span>Opción Google Drive</span>
+                <span>Ver archivo en GitHub</span>
               </a>
             </div>
 

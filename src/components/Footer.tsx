@@ -1,14 +1,13 @@
 import React from 'react';
 import { Download, ExternalLink, ShieldCheck, Mail, Heart } from 'lucide-react';
 import { TatoLogo } from './TatoLogo';
+import { installerFileName, installerUrl } from '../downloadConfig';
 
 interface FooterProps {
   onOpenDownload: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenDownload }) => {
-  const installerUrl = `${import.meta.env.BASE_URL}TatoVPN_Installer.exe`;
-
   return (
     <footer className="bg-[#05080f] text-slate-400 border-t border-slate-800/80 pt-12 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

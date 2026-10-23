@@ -11,14 +11,13 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { TatoLogo } from './TatoLogo';
+import { installerFileName, installerUrl } from '../downloadConfig';
 
 interface HeroProps {
   onOpenDownload: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
-  const installerUrl = `${import.meta.env.BASE_URL}TatoVPN_Installer.exe`;
-
   return (
     <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden">
       {/* Radiant orange glow accents */}
