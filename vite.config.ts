@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: process.env.GITHUB_ACTIONS ? '/PaginaTatoVPN/' : '/',
+    base: process.env.NODE_ENV === 'production' ? '/PaginaTatoVPN/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
